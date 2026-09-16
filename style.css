@@ -81,6 +81,7 @@ p { margin: 0 0 1em; }
 .nav-toggle { display: none; background: none; border: 0; padding: .4rem; cursor: pointer; }
 .nav-toggle span { display: block; width: 24px; height: 2px; background: var(--ink); margin: 5px 0; border-radius: 2px; }
 .mobile-nav { display: flex; flex-direction: column; background: var(--bg-alt); border-bottom: 1px solid var(--line); }
+.mobile-nav[hidden] { display: none; }
 .mobile-nav a { padding: .9rem 1.5rem; text-decoration: none; color: var(--ink); font-weight: 500; border-top: 1px solid var(--line); }
 
 /* Hero */
