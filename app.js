@@ -145,9 +145,38 @@
         grid.innerHTML = "";
         var p = document.createElement("p");
         p.className = "portfolio-empty";
-        p.textContent = "Les réalisations ne peuvent pas être affichées pour le moment.";
+        p.innerHTML = "Les réalisations ne s'affichent pas pour le moment. Retrouvez-les sur Instagram : <a href=\"https://www.instagram.com/antoinethomas.fr/\" target=\"_blank\" rel=\"noopener\">@antoinethomas.fr</a>.";
         grid.appendChild(p);
       });
+  }
+
+  /* ---------- Vidéos : lecture au scroll, apparitions ---------- */
+  var reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var videos = document.querySelectorAll("video.scrollplay");
+  if ("IntersectionObserver" in window && videos.length) {
+    var vio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        var v = en.target;
+        if (en.isIntersecting && en.intersectionRatio >= 0.4) {
+          var p = v.play();
+          if (p && p.catch) p.catch(function () {});
+        } else {
+          v.pause();
+        }
+      });
+    }, { threshold: [0, 0.4, 1] });
+    videos.forEach(function (v) { vio.observe(v); });
+  }
+  var reveals = document.querySelectorAll(".reveal");
+  if (reduced || !("IntersectionObserver" in window)) {
+    reveals.forEach(function (el) { el.classList.add("in"); });
+  } else {
+    var rio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add("in"); rio.unobserve(en.target); }
+      });
+    }, { threshold: 0.15 });
+    reveals.forEach(function (el) { rio.observe(el); });
   }
 
   /* ---------- Formulaire de contact ---------- */

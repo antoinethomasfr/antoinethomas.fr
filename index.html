@@ -3,18 +3,21 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Antoine THOMAS — Électricien, plombier, créateur d'espace</title>
-  <meta name="description" content="Antoine THOMAS, artisan électricien et plombier, créateur d'espace. Rénovation, dépannage, salles de bain, aménagements. Devis gratuit, rendez-vous en ligne.">
+  <title>Antoine THOMAS — Électricien, plombier, créateur d'espace · Côte d'Opale</title>
+  <meta name="description" content="Antoine THOMAS, artisan électricien, plombier et créateur d'espace sur la Côte d'Opale. Salles de bain, tableaux électriques, rénovation, dépannage. Rendez-vous en ligne pour un devis.">
   <link rel="canonical" href="https://antoinethomas.fr/">
   <meta property="og:title" content="Antoine THOMAS — Électricien, plombier, créateur d'espace">
-  <meta property="og:description" content="Rénovation, dépannage, salles de bain, aménagements. Devis gratuit, rendez-vous en ligne.">
+  <meta property="og:description" content="Un seul artisan pour l'électricité, la plomberie et l'aménagement. Côte d'Opale. Rendez-vous en ligne pour un devis.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://antoinethomas.fr/">
-  <meta name="theme-color" content="#0f172a">
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <meta property="og:image" content="https://antoinethomas.fr/assets/icon-512.png">
+  <meta name="theme-color" content="#102028">
+  <link rel="icon" href="assets/icon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="assets/icon-192.png" sizes="192x192" type="image/png">
+  <link rel="apple-touch-icon" href="assets/icon-180.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <script type="application/ld+json">
   {
@@ -25,90 +28,71 @@
     "url": "https://antoinethomas.fr/",
     "telephone": "+33630721556",
     "email": "contact@antoinethomas.fr",
+    "image": "https://antoinethomas.fr/assets/icon-512.png",
     "areaServed": "Côte d'Opale, Pas-de-Calais",
-    "priceRange": "€€"
+    "sameAs": ["https://www.instagram.com/antoinethomas.fr/"]
   }
   </script>
 </head>
 <body>
 
 <header class="topbar" id="top">
-  <a class="brand" href="#top">
-    <span class="brand-mark" aria-hidden="true">AT</span>
-    <span class="brand-text">Antoine <strong>THOMAS</strong></span>
+  <a class="brand" href="#top" aria-label="Antoine THOMAS, retour en haut de page">
+    <img class="brand-badge" src="assets/icon-192.png" width="44" height="44" alt="">
+    <span class="brand-text">Antoine <b>THOMAS</b></span>
   </a>
   <nav class="nav" aria-label="Navigation principale">
-    <a href="#services">Services</a>
     <a href="#realisations">Réalisations</a>
+    <a href="#metiers">Métiers</a>
+    <a href="#video">En vidéo</a>
     <a href="#apropos">À propos</a>
     <a href="#contact">Contact</a>
   </nav>
-  <a class="btn btn-primary btn-small" href="#contact">Demander un devis</a>
-  <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-nav">
-    <span></span><span></span><span></span>
+  <a class="btn btn-gold btn-small topbar-cta" href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ31hKirOrOlDgwX0n7eOCm_jj1rH4q8nwApwOTVHQJrnVgPOn3Lu7eCXgMMeAlGurtqv2GQEWz9" target="_blank" rel="noopener">Prendre rendez-vous</a>
+  <button class="nav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-nav">
+    <span></span><span></span>
   </button>
 </header>
-<nav class="mobile-nav" id="mobile-nav" hidden>
-  <a href="#services">Services</a>
+<nav class="mobile-nav" id="mobile-nav" hidden aria-label="Navigation mobile">
   <a href="#realisations">Réalisations</a>
+  <a href="#metiers">Métiers</a>
+  <a href="#video">En vidéo</a>
   <a href="#apropos">À propos</a>
   <a href="#contact">Contact</a>
+  <a class="mobile-nav-cta" href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ31hKirOrOlDgwX0n7eOCm_jj1rH4q8nwApwOTVHQJrnVgPOn3Lu7eCXgMMeAlGurtqv2GQEWz9" target="_blank" rel="noopener">Prendre rendez-vous pour un devis</a>
 </nav>
 
 <main>
 
   <section class="hero">
-    <div class="hero-inner">
-      <p class="eyebrow">Artisan · Électricité · Plomberie · Création d'espace</p>
-      <h1>Des travaux propres, <span class="accent">faits pour durer.</span></h1>
-      <p class="lead">Électricien et plombier indépendant, je rénove, je dépanne et j'aménage vos espaces avec soin. Un seul interlocuteur, du premier contact à la dernière finition.</p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="#contact">Demander un devis gratuit</a>
-        <a class="btn btn-ghost" href="#realisations">Voir mes réalisations</a>
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <h1>Des travaux propres, <em>faits pour durer.</em></h1>
+        <p class="lead">Électricien, plombier et créateur d'espace sur la Côte d'Opale. Je conçois, je réalise et je finis moi-même : un seul artisan, du premier coup de fil à la dernière finition.</p>
+        <div class="hero-actions">
+          <a class="btn btn-gold" href="#realisations">Voir mes réalisations</a>
+          <a class="btn btn-outline" href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ31hKirOrOlDgwX0n7eOCm_jj1rH4q8nwApwOTVHQJrnVgPOn3Lu7eCXgMMeAlGurtqv2GQEWz9" target="_blank" rel="noopener">Prendre rendez-vous</a>
+        </div>
+        <p class="hero-meta">Électricité · Plomberie · Création d'espace<br>Entreprise individuelle · <a href="https://www.instagram.com/antoinethomas.fr/" target="_blank" rel="noopener">@antoinethomas.fr</a></p>
       </div>
-      <ul class="hero-points">
-        <li>Devis gratuit et détaillé</li>
-        <li>Rendez-vous en ligne</li>
-        <li>Travail soigné, chantier propre</li>
-      </ul>
+      <figure class="hero-video reveal">
+        <div class="phone">
+          <span class="phone-tag" aria-hidden="true">Avant → Après · 45 s</span>
+          <video class="scrollplay" muted playsinline loop preload="metadata" poster="assets/reel-showcase-cover.jpg?v=2" aria-label="Vidéo : rénovation complète d'une salle de bain, avant et après">
+            <source src="assets/reel-showcase.mp4" type="video/mp4">
+          </video>
+        </div>
+        <figcaption>Salle de bain rénovée de A à Z · <a href="https://www.instagram.com/reel/C73t5nHoj6f/" target="_blank" rel="noopener">Voir sur Instagram</a></figcaption>
+      </figure>
     </div>
   </section>
 
-  <section class="section" id="services">
+  <section class="section" id="realisations">
     <div class="container">
-      <p class="eyebrow">Ce que je fais</p>
-      <h2>Trois métiers, un seul artisan</h2>
-      <div class="cards">
-        <article class="card">
-          <div class="card-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/></svg>
-          </div>
-          <h3>Électricité</h3>
-          <p>Mise aux normes, tableau électrique, rénovation complète, prises et éclairages, dépannage. Installation sûre et conforme.</p>
-        </article>
-        <article class="card">
-          <div class="card-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M12 3c-3 4-6 7.5-6 11a6 6 0 0 0 12 0c0-3.5-3-7-6-11z"/></svg>
-          </div>
-          <h3>Plomberie</h3>
-          <p>Salle de bain, WC, cuisine, chauffe-eau, robinetterie, fuites et remplacements. Du dépannage rapide à la rénovation complète.</p>
-        </article>
-        <article class="card">
-          <div class="card-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M3 21V9l9-6 9 6v12h-6v-7H9v7H3z"/></svg>
-          </div>
-          <h3>Création d'espace</h3>
-          <p>J'imagine et je réalise vos aménagements : salle d'eau, buanderie, coin cuisine, optimisation d'un petit espace. Conseil, plan, réalisation.</p>
-        </article>
+      <div class="section-head">
+        <h2>Mes réalisations</h2>
+        <p class="section-intro">Des chantiers réels, photographiés avant et après. Faites glisser le curseur sur chaque photo.</p>
       </div>
-    </div>
-  </section>
-
-  <section class="section section-alt" id="realisations">
-    <div class="container">
-      <p class="eyebrow">Avant / après</p>
-      <h2>Mes réalisations</h2>
-      <p class="section-intro">Faites glisser le curseur sur chaque photo pour comparer l'avant et l'après.</p>
       <div class="filters" role="group" aria-label="Filtrer par métier">
         <button class="chip is-active" data-filter="all" type="button">Tout</button>
         <button class="chip" data-filter="Électricité" type="button">Électricité</button>
@@ -121,40 +105,82 @@
     </div>
   </section>
 
-  <section class="section" id="apropos">
-    <div class="container about">
-      <div class="about-text">
-        <p class="eyebrow">À propos</p>
-        <h2>Antoine THOMAS, artisan indépendant</h2>
-        <p>Électricien et plombier de formation, j'interviens en entreprise individuelle sur la Côte d'Opale et ses environs. Je prends le temps d'écouter votre besoin, je vous conseille franchement et je réalise moi-même les travaux.</p>
-        <p>Ma priorité : un chantier propre, des délais tenus et un résultat dont vous serez fier pendant des années.</p>
-        <ul class="about-points">
-          <li><strong>Un seul interlocuteur</strong> du devis à la réception.</li>
-          <li><strong>Devis clair et gratuit</strong>, prix annoncés à l'avance.</li>
-          <li><strong>Entreprise individuelle</strong>, TVA non applicable (art. 293 B du CGI).</li>
-        </ul>
+  <section class="section section-navy" id="metiers">
+    <div class="container">
+      <div class="section-head">
+        <h2>Trois métiers, un seul interlocuteur</h2>
+        <p class="section-intro">Pas besoin de coordonner trois entreprises : je prends le chantier en main du devis à la réception.</p>
       </div>
-      <aside class="about-card">
-        <h3>Zone d'intervention</h3>
-        <p>Côte d'Opale et alentours (Pas-de-Calais).</p>
-        <h3>Horaires</h3>
-        <p>Du lundi au vendredi, 9 h – 19 h.<br>Visite pour devis : créneaux du soir, sur rendez-vous.</p>
-        <a class="btn btn-primary" href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ31hKirOrOlDgwX0n7eOCm_jj1rH4q8nwApwOTVHQJrnVgPOn3Lu7eCXgMMeAlGurtqv2GQEWz9" target="_blank" rel="noopener">Prendre rendez-vous pour un devis</a>
-      </aside>
+      <div class="trades">
+        <article class="trade">
+          <h3>Électricité</h3>
+          <p>Tableau électrique, mise aux normes, rénovation complète, prises et éclairages, dépannage. Une installation sûre, conforme et propre.</p>
+        </article>
+        <article class="trade">
+          <h3>Plomberie</h3>
+          <p>Salle de bain, WC suspendu, receveur, cuisine, chauffe-eau, robinetterie, fuites. Du dépannage rapide à la rénovation complète.</p>
+        </article>
+        <article class="trade">
+          <h3>Création d'espace</h3>
+          <p>Salle d'eau, buanderie, coin cuisine, petit espace à optimiser : je conseille, je dessine et je réalise l'aménagement de bout en bout.</p>
+        </article>
+      </div>
     </div>
   </section>
 
-  <section class="section section-alt" id="contact">
-    <div class="container contact">
-      <div class="contact-info">
-        <p class="eyebrow">Contact</p>
+  <section class="section" id="video">
+    <div class="container video-grid">
+      <figure class="video-figure reveal">
+        <div class="phone phone-light">
+          <video class="scrollplay" muted playsinline loop preload="metadata" poster="assets/reel-pvc-cover.jpg" aria-label="Vidéo : ma méthode pour coller des évacuations en PVC">
+            <source src="assets/reel-pvc.mp4" type="video/mp4">
+          </video>
+        </div>
+        <figcaption>Ma méthode pour coller les évacuations PVC. <a href="https://www.instagram.com/reel/DSSdwBvDLFv/" target="_blank" rel="noopener">Voir sur Instagram</a></figcaption>
+      </figure>
+      <div class="video-copy">
+        <h2>Je montre comment je travaille</h2>
+        <p>Sur Instagram, je filme mes chantiers : la pose d'un WC suspendu, le montage d'un tableau électrique, le remplacement d'une VMC. Vous voyez la méthode, les outils et le résultat avant même de m'appeler.</p>
+        <p>Cette vidéo sur le collage du PVC a dépassé les 200 000 vues. Simple, propre, sans fuite.</p>
+        <a class="btn btn-navy" href="https://www.instagram.com/antoinethomas.fr/" target="_blank" rel="noopener">Suivre @antoinethomas.fr</a>
+        <ul class="reel-strip" aria-label="Autres vidéos">
+          <li><a href="https://www.instagram.com/antoinethomas.fr/reels/" target="_blank" rel="noopener"><img src="assets/cover-sdb.jpg" alt="Pose d'une paroi de douche dans une salle de bain en marbre" loading="lazy"></a></li>
+          <li><a href="https://www.instagram.com/reel/DR7RGdCjJrA/" target="_blank" rel="noopener"><img src="assets/cover-vmc.jpg" alt="Remplacement d'une VMC dans des combles" loading="lazy"></a></li>
+          <li><a href="https://www.instagram.com/antoinethomas.fr/" target="_blank" rel="noopener"><img src="assets/cover-c.jpg" alt="Ma méthode pour monter un tableau électrique" loading="lazy"></a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="apropos">
+    <div class="container about-grid">
+      <div class="about-copy">
+        <h2>Antoine THOMAS, artisan indépendant</h2>
+        <p>Électricien et plombier de formation, j'interviens seul, en entreprise individuelle, sur la Côte d'Opale et ses environs. J'écoute votre besoin, je vous conseille franchement, et je réalise moi-même les travaux.</p>
+        <p>Ma priorité : un chantier propre, des délais tenus et un résultat dont vous serez fier pendant des années.</p>
+        <dl class="facts">
+          <div><dt>Zone d'intervention</dt><dd>Côte d'Opale et alentours, Pas-de-Calais.</dd></div>
+          <div><dt>Visite pour un devis</dt><dd>Du lundi au vendredi en fin de journée, sur rendez-vous en ligne. Devis gratuit.</dd></div>
+          <div><dt>Statut</dt><dd>Entreprise individuelle, TVA non applicable (art. 293 B du CGI).</dd></div>
+        </dl>
+        <a class="btn btn-gold" href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ31hKirOrOlDgwX0n7eOCm_jj1rH4q8nwApwOTVHQJrnVgPOn3Lu7eCXgMMeAlGurtqv2GQEWz9" target="_blank" rel="noopener">Réserver une visite pour un devis</a>
+      </div>
+      <figure class="about-photo reveal">
+        <img src="assets/portrait-antoine.jpg?v=2" alt="Antoine THOMAS sur un chantier, devant un bâti-support de WC suspendu" loading="lazy">
+      </figure>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="container contact-grid">
+      <div class="contact-copy">
         <h2>Parlons de votre projet</h2>
-        <p>Décrivez vos travaux en quelques mots, je vous réponds rapidement avec un devis ou une proposition de visite.</p>
+        <p>Décrivez vos travaux en quelques mots. Je vous réponds vite, avec une proposition de visite ou un devis.</p>
         <ul class="contact-list">
-          <li><span class="contact-label">Téléphone</span><a href="tel:+33630721556">06 30 72 15 56</a></li>
-          <li><span class="contact-label">E-mail</span><a href="mailto:contact@antoinethomas.fr">contact@antoinethomas.fr</a></li>
-          <li><span class="contact-label">Instagram</span><a href="https://www.instagram.com/antoinethomas.fr/" target="_blank" rel="noopener">@antoinethomas.fr</a></li>
-          <li><span class="contact-label">Rendez-vous</span><a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ31hKirOrOlDgwX0n7eOCm_jj1rH4q8nwApwOTVHQJrnVgPOn3Lu7eCXgMMeAlGurtqv2GQEWz9" target="_blank" rel="noopener">Réserver une visite pour devis</a></li>
+          <li><span>Téléphone</span><a href="tel:+33630721556">06 30 72 15 56</a></li>
+          <li><span>E-mail</span><a href="mailto:contact@antoinethomas.fr">contact@antoinethomas.fr</a></li>
+          <li><span>Instagram</span><a href="https://www.instagram.com/antoinethomas.fr/" target="_blank" rel="noopener">@antoinethomas.fr</a></li>
+          <li><span>Rendez-vous</span><a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ31hKirOrOlDgwX0n7eOCm_jj1rH4q8nwApwOTVHQJrnVgPOn3Lu7eCXgMMeAlGurtqv2GQEWz9" target="_blank" rel="noopener">Réserver une visite en ligne</a></li>
         </ul>
       </div>
       <form class="contact-form" id="contact-form" novalidate>
@@ -184,7 +210,7 @@
           <label for="f-site">Site web</label>
           <input id="f-site" name="site" type="text" tabindex="-1" autocomplete="off">
         </div>
-        <button class="btn btn-primary" type="submit">Envoyer ma demande</button>
+        <button class="btn btn-gold" type="submit">Envoyer ma demande</button>
         <p class="form-status" id="form-status" role="status"></p>
       </form>
     </div>
@@ -193,11 +219,19 @@
 </main>
 
 <footer class="footer">
-  <div class="container footer-inner">
-    <p><strong>Antoine THOMAS</strong> — Artisan électricien, plombier, créateur d'espace. Entreprise individuelle, TVA non applicable (art. 293 B du CGI).</p>
-    <p><a href="tel:+33630721556">06 30 72 15 56</a> · <a href="mailto:contact@antoinethomas.fr">contact@antoinethomas.fr</a> · <a href="https://www.instagram.com/antoinethomas.fr/" target="_blank" rel="noopener">Instagram</a></p>
-    <p class="footer-legal"><a href="mentions-legales.html">Mentions légales</a> · Site hébergé par GitHub Pages.</p>
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <img src="assets/icon-192.png" width="72" height="72" alt="Logo Antoine THOMAS">
+      <p>Artisan électricien, plombier, créateur d'espace.<br>Côte d'Opale · Pas-de-Calais.</p>
+    </div>
+    <ul class="footer-links">
+      <li><a href="tel:+33630721556">06 30 72 15 56</a></li>
+      <li><a href="mailto:contact@antoinethomas.fr">contact@antoinethomas.fr</a></li>
+      <li><a href="https://www.instagram.com/antoinethomas.fr/" target="_blank" rel="noopener">Instagram @antoinethomas.fr</a></li>
+      <li><a href="mentions-legales.html">Mentions légales</a></li>
+    </ul>
   </div>
+  <p class="footer-legal container">Entreprise individuelle, TVA non applicable (art. 293 B du CGI).</p>
 </footer>
 
 <script src="app.js" defer></script>
