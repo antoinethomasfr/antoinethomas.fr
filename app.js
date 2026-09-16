@@ -39,6 +39,7 @@
     img.loading = "lazy";
     img.decoding = "async";
     img.draggable = false;
+    img.referrerPolicy = "no-referrer";
     img.src = imgUrl(id, 1200);
     img.addEventListener("error", function onErr() {
       img.removeEventListener("error", onErr);
