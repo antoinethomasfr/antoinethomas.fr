@@ -29,8 +29,18 @@
     "telephone": "+33630721556",
     "email": "contact@antoinethomas.fr",
     "image": "https://antoinethomas.fr/assets/icon-512.png",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "15 bis rue du Petit Marais",
+      "postalCode": "62155",
+      "addressLocality": "Merlimont",
+      "addressCountry": "FR"
+    },
     "areaServed": "Côte d'Opale, Pas-de-Calais",
-    "sameAs": ["https://www.instagram.com/antoinethomas.fr/"]
+    "sameAs": [
+      "https://www.instagram.com/antoinethomas.fr/",
+      "https://www.google.com/maps?cid=11858609017718594631"
+    ]
   }
   </script>
 </head>
@@ -43,6 +53,7 @@
   </a>
   <nav class="nav" aria-label="Navigation principale">
     <a href="#realisations">Réalisations</a>
+    <a href="#avis">Avis</a>
     <a href="#metiers">Métiers</a>
     <a href="#video">En vidéo</a>
     <a href="#apropos">À propos</a>
@@ -55,6 +66,7 @@
 </header>
 <nav class="mobile-nav" id="mobile-nav" hidden aria-label="Navigation mobile">
   <a href="#realisations">Réalisations</a>
+  <a href="#avis">Avis</a>
   <a href="#metiers">Métiers</a>
   <a href="#video">En vidéo</a>
   <a href="#apropos">À propos</a>
@@ -102,6 +114,54 @@
       <div class="portfolio" id="portfolio" aria-live="polite">
         <p class="portfolio-empty">Chargement des réalisations…</p>
       </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="avis">
+    <div class="container reviews-grid">
+      <div class="reviews-head">
+        <h2>Ce que disent mes clients</h2>
+        <p class="rating">
+          <svg class="stars" viewBox="0 0 120 24" width="120" height="24" aria-hidden="true" focusable="false"><defs><path id="star" d="M12 2.6l2.9 6.1 6.6.9-4.8 4.6 1.2 6.6L12 17.6l-5.9 3.2 1.2-6.6L2.5 9.6l6.6-.9z"/></defs><use href="#star"/><use href="#star" x="24"/><use href="#star" x="48"/><use href="#star" x="72"/><use href="#star" x="96"/></svg>
+          <span><b>5,0 sur 5</b> · 20 avis Google</span>
+        </p>
+        <p class="section-intro">Des avis déposés librement sur Google par des clients chez qui j'ai travaillé. En voici quelques extraits.</p>
+        <div class="reviews-actions">
+          <a class="btn btn-navy" href="https://search.google.com/local/reviews?placeid=ChIJj1PAUTbb3UcRR1xcbxI-kqQ" target="_blank" rel="noopener">Lire tous les avis sur Google</a>
+          <a class="reviews-write" href="https://search.google.com/local/writereview?placeid=ChIJj1PAUTbb3UcRR1xcbxI-kqQ" target="_blank" rel="noopener">J'ai travaillé chez vous ? Laissez un avis</a>
+        </div>
+        <p class="reviews-note">Sur Google, ma fiche porte encore mon ancien nom d'enseigne, « LA VIE LA VRAIE ».</p>
+      </div>
+      <ul class="reviews">
+        <li class="review review-lead">
+          <blockquote><p>« Artisan sérieux et réactif […]. Respecte les délais et ses engagements. À recommander en toute confiance. »</p></blockquote>
+          <p class="review-by"><b>Lionel C.</b> · électricité et plomberie, juillet 2025</p>
+        </li>
+        <li class="review">
+          <blockquote><p>« J'ai été très satisfaite des travaux de plomberie réalisés dans mon appartement […]. Très sérieux et travail soigné. »</p></blockquote>
+          <p class="review-by"><b>Francine</b> · plomberie, mai 2026</p>
+        </li>
+        <li class="review">
+          <blockquote><p>« Totalement satisfait de la rénovation de notre douche […], il fallait être précis et minutieux, je recommande à 100 %. »</p></blockquote>
+          <p class="review-by"><b>Jonathan G.</b> · rénovation de douche, avril 2026</p>
+        </li>
+        <li class="review">
+          <blockquote><p>« Électricien très sérieux pour les conseils, rdv, devis et réalisations dans les temps. […] Et en plus sympathique. »</p></blockquote>
+          <p class="review-by"><b>Sylvie C.</b> · électricité et sanitaires, février 2026</p>
+        </li>
+        <li class="review">
+          <blockquote><p>« Très gentil, il donne facilement des explications sur son intervention et a laissé un chantier très propre. »</p></blockquote>
+          <p class="review-by"><b>Marie-Ange B.</b> · avril 2025</p>
+        </li>
+        <li class="review">
+          <blockquote><p>« […] intervenu très rapidement […], avec beaucoup de professionnalisme et les explications pour comprendre le problème. »</p></blockquote>
+          <p class="review-by"><b>Hélène D.</b> · mars 2025</p>
+        </li>
+        <li class="review">
+          <blockquote><p>« Super sympa, très professionnel, sérieux. […] Je recommande les yeux fermés cette société. »</p></blockquote>
+          <p class="review-by"><b>Jean-Michel V.</b> · dépannage, janvier 2026</p>
+        </li>
+      </ul>
     </div>
   </section>
 
@@ -222,12 +282,13 @@
   <div class="container footer-grid">
     <div class="footer-brand">
       <img src="assets/icon-192.png" width="72" height="72" alt="Logo Antoine THOMAS">
-      <p>Artisan électricien, plombier, créateur d'espace.<br>Côte d'Opale · Pas-de-Calais.</p>
+      <p>Artisan électricien, plombier, créateur d'espace.<br>15 bis rue du Petit Marais, 62155 Merlimont · Côte d'Opale.</p>
     </div>
     <ul class="footer-links">
       <li><a href="tel:+33630721556">06 30 72 15 56</a></li>
       <li><a href="mailto:contact@antoinethomas.fr">contact@antoinethomas.fr</a></li>
       <li><a href="https://www.instagram.com/antoinethomas.fr/" target="_blank" rel="noopener">Instagram @antoinethomas.fr</a></li>
+      <li><a href="https://search.google.com/local/reviews?placeid=ChIJj1PAUTbb3UcRR1xcbxI-kqQ" target="_blank" rel="noopener">Avis Google : 5,0 sur 5</a></li>
       <li><a href="mentions-legales.html">Mentions légales</a></li>
     </ul>
   </div>
