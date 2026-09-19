@@ -75,7 +75,12 @@
     ba.className = "ba";
     ba.style.setProperty("--cut", "50%");
     ba.appendChild(makeImg(p.before, "Avant — " + (p.title || ""), "ba-before"));
-    ba.appendChild(makeImg(p.after, "Après — " + (p.title || ""), "ba-after"));
+    var afterImg = makeImg(p.after, "Après — " + (p.title || ""), "ba-after");
+    /* Photos prises au téléphone, en hauteur : cadre vertical pour ne pas couper le chantier */
+    afterImg.addEventListener("load", function () {
+      if (afterImg.naturalHeight > afterImg.naturalWidth * 1.1) ba.classList.add("ba-portrait");
+    });
+    ba.appendChild(afterImg);
 
     var handle = document.createElement("div");
     handle.className = "ba-handle";
