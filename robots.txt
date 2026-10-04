@@ -1,0 +1,6 @@
+# antoinethomas.fr : tous les robots sont autorisés, moteurs de recherche,
+# robots de recherche des IA et robots d'entraînement (décision du 02/10/2026).
+User-agent: *
+Allow: /
+
+Sitemap: https://antoinethomas.fr/sitemap.xml
