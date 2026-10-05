@@ -388,18 +388,26 @@
       car.addEventListener("pointerdown", stopEdge);
     }
 
-    /* Écran tactile : le groupe visible avance seul toutes les 5 s, pause 8 s après un toucher */
+    /* Écran tactile : le groupe visible part 2 s après son arrivée à l'écran, puis avance seul toutes les 5 s ;
+       pause 8 s après un toucher sur le carrousel, sauf quand le doigt ne fait que défiler la page */
     var coarse = window.matchMedia && window.matchMedia("(hover: none)").matches;
     if (coarse && !reduced && "IntersectionObserver" in window) {
+      var START = 2000, STEP = 5000, HOLD = 8000;
       var timer = 0, visible = false, holdUntil = 0, stopped = false;
+      var arm = function (delay) {
+        if (timer) { clearTimeout(timer); timer = 0; }
+        if (!stopped && visible) timer = setTimeout(tick, delay);
+      };
       var tick = function () {
         timer = 0;
         if (stopped || !visible || document.hidden) return;
-        if (Date.now() >= holdUntil) goTo((current + 1) % stops.length);
-        schedule();
+        /* Pause en cours : reprise à la fin de la pause, pas au prochain battement */
+        var wait = holdUntil - Date.now();
+        if (wait > 0) { arm(wait); return; }
+        goTo((current + 1) % stops.length);
+        arm(STEP);
       };
-      var schedule = function () { if (!timer && !stopped) timer = setTimeout(tick, 5000); };
-      var hold = function () { holdUntil = Date.now() + 8000; };
+      var hold = function () { holdUntil = Date.now() + HOLD; };
       /* Bouton pause / lecture (WCAG 2.2.2) : arrêt aussi dès qu'un élément du carrousel prend le focus */
       var toggle = document.createElement("button");
       toggle.type = "button";
@@ -414,24 +422,36 @@
         stopped = v;
         toggle.classList.toggle("is-stopped", v);
         toggle.setAttribute("aria-label", v ? "Relancer le défilement automatique" : "Arrêter le défilement automatique");
-        if (v) { if (timer) { clearTimeout(timer); timer = 0; } } else schedule();
+        /* Relance demandée par le visiteur : départ rapide, sans la pause du toucher sur le bouton */
+        if (v) { if (timer) { clearTimeout(timer); timer = 0; } } else { holdUntil = 0; arm(START); }
       };
       toggle.setAttribute("aria-label", "Arrêter le défilement automatique");
       toggle.addEventListener("click", function () { setStopped(!stopped); });
       car.addEventListener("focusin", function (e) { if (e.target !== toggle && !stopped) setStopped(true); });
       dots.appendChild(toggle);
       /* Réarmé à chaque contact : un glisser lent du curseur ne voit jamais la bande partir sous le doigt */
-      ["pointerdown", "pointermove", "pointerup", "touchstart", "touchend"].forEach(function (ev) {
+      ["pointerdown", "pointermove", "pointerup", "touchstart"].forEach(function (ev) {
         car.addEventListener(ev, hold, { passive: true });
       });
+      /* Doigt levé : si la page a défilé sans que la bande bouge, le carrousel n'a pas été touché pour lui-même,
+         il repart vite ; sinon (photo glissée, curseur, bouton) la pause court à partir de maintenant */
+      var pageY = 0, trackX = 0;
+      car.addEventListener("touchstart", function () { pageY = window.pageYOffset; trackX = track.scrollLeft; }, { passive: true });
+      var release = function () {
+        var pageOnly = Math.abs(window.pageYOffset - pageY) > 24 && Math.abs(track.scrollLeft - trackX) < 8;
+        if (pageOnly) { holdUntil = 0; arm(START); } else hold();
+      };
+      car.addEventListener("touchend", release, { passive: true });
+      car.addEventListener("touchcancel", release, { passive: true });
       var cio = new IntersectionObserver(function (entries) {
         entries.forEach(function (en) {
+          var was = visible;
           visible = en.isIntersecting && en.intersectionRatio >= 0.5;
-          if (visible) schedule();
+          if (visible && !was) arm(START);
         });
       }, { threshold: [0, 0.5, 1] });
       cio.observe(car);
-      document.addEventListener("visibilitychange", function () { if (!document.hidden && visible) schedule(); });
+      document.addEventListener("visibilitychange", function () { if (!document.hidden && visible) arm(START); });
     }
     return car;
   }
