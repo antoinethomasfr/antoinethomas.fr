@@ -761,6 +761,14 @@
         premier.focus();
         return;
       }
+      // Liens refusés (filtre v2 du 28/10/2026, même règle que côté serveur) : le visiteur est prévenu au lieu d'être bloqué en silence.
+      var LIEN = /https?:\/\/|www\.|\b[a-z0-9-]+\.(?:com|net|org|info|biz|io|co|id|xyz|top|site|online|club|shop|app|fr|be|ch|ca|us|uk|de|es|it|nl|ru|cn|in|me|tv|cc|link|click|live|pro|my)\b\/?/i;
+      if (LIEN.test(data.message) || LIEN.test(data.nom) || LIEN.test(data.ville)) {
+        form.message.setAttribute("aria-invalid", "true"); form.message.setAttribute("aria-describedby", "form-status");
+        setStatus("Les liens et adresses de sites ne sont pas acceptés dans ce formulaire. Décrivez vos travaux sans lien ; vous pourrez envoyer vos photos ou votre annonce par mail ou par SMS ensuite.", "err");
+        form.message.focus();
+        return;
+      }
       if (data.site) { setStatus("Merci, votre demande a bien été envoyée.", "ok"); form.reset(); return; }
 
       if (!CONTACT_WEBHOOK) {
