@@ -52,10 +52,10 @@ Autour de Merlimont, sur la Côte d'Opale (Pas-de-Calais) : Merlimont, Berck, Cu
 ## Réalisations présentées sur le site
 
 <!-- realisations:debut -->
-- Salles de bain, 5 chantiers : Merlimont (3), Le Touquet, Stella-Plage
+- Salles de bain, 8 chantiers : Merlimont (3), Le Touquet, Stella-Plage, 3 sans commune
 - Douches, 5 chantiers : Merlimont (2), Berck, Le Touquet, Stella-Plage
-- WC, 3 chantiers : Le Touquet, Cucq, Verton
-- Électricité, 3 chantiers : Le Portel, Groffliers, Merlimont
+- WC, 5 chantiers : Le Touquet, Cucq, Verton, 2 sans commune
+- Électricité, 5 chantiers : Le Portel, Groffliers, Merlimont, 2 sans commune
 
 Communes des chantiers présentés : Merlimont, Le Touquet, Stella-Plage, Berck, Cucq, Verton, Le Portel, Groffliers.
 <!-- realisations:fin -->
