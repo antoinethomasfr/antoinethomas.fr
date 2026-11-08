@@ -3,7 +3,7 @@
   "use strict";
 
   // Adresse du webhook Make qui reçoit le formulaire de contact (vide = repli sur un e-mail).
-  var CONTACT_WEBHOOK = "https://n8n-antoinethomas-u80167.vm.elestio.app/webhook/site-formulaire-8d89d68e3a0ec011e53b3319";
+  var CONTACT_WEBHOOK = "https://n8n-antoinethomas-u80167.vm.elestio.app/webhook/__N8N_CHEMIN_SITE_FORMULAIRE_PROD__";
   var PORTFOLIO_URL = "portfolio.json";
   var FINITIONS_URL = "finitions.json";
 
@@ -139,6 +139,11 @@
   }
 
   /* « Type | Ville | note » → type, ville ; sans « | », le nom entier vaut type */
+  function rank(p) {
+    var r = parseInt(String(p.title || "").split("|")[3], 10);
+    return isNaN(r) ? 999 : r;
+  }
+
   function parseTitle(raw) {
     var parts = String(raw || "").split("|").map(function (s) { return s.trim(); });
     return { type: parts[0] || "", city: parts[1] || "" };
@@ -509,7 +514,8 @@
       .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
       .then(function (data) {
         projects = (data && data.projects ? data.projects : []).filter(function (p) { return p.before && p.after; });
-        projects.sort(function (a, b) { return (b.date || "").localeCompare(a.date || ""); });
+        /* Rang facultatif en 4e champ du nom de dossier (« Type | Ville | note | 2 ») : rang croissant, puis date récente */
+        projects.sort(function (a, b) { return (rank(a) - rank(b)) || (b.date || "").localeCompare(a.date || ""); });
         renderGroups();
       })
       .catch(function () {
